@@ -1,0 +1,32 @@
+.footer{
+    margin-top: 80px;
+    margin-left: -50px;
+    margin-right: -50px;
+
+    width: calc(100% + 100px);
+
+    padding: 30px 8% 60px 8%;
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    background-color: #D1D2DB;
+    margin-top:inherit;
+    
+}
+
+.footer p{
+    font-family: 'Montserrat';
+    font-size: 21px;
+
+    color: #666370;
+}
+
+.footer-logo{
+    max-width: 250px;
+    height:fit-content;
+}

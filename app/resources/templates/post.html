@@ -1,0 +1,75 @@
+{%extends 'base.html'%}
+
+
+{%block styles%}
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="css/post.css"  rel="stylesheet" />
+    <link href="css/carusel.css"  rel="stylesheet" />
+    <link href="css/footer.css"  rel="stylesheet" />
+{%endblock%}
+
+{%block main%}
+
+    <div class="main-block">
+        <div class="container title-header">
+            <div class="post-title">{{post.title}}</div>
+            <a href="/news" class="back-link">
+                <img src="img/back_btn.png" style="width: 15px;height:15px;">
+                <div>
+                    Новости
+                </div>
+            </a>
+        </div>
+        <div class="container news-data">
+            <div class="row post">
+                <div class="col post-text-col">
+                    <div class="row post-text">
+                        {{post.info | safe}}
+                    </div>
+                </div>
+                <div class="col" style="max-width: min-content;">
+                    <div style="display: flex; align-items:center;justify-content:center; width:400px;height:280px;">
+                        {%if post.images | length > 0 %}
+                            <img class="post-img" src="data:image/png;base64,{{post.images[0].data}}">
+                        {%else%}
+                            <img class="post-img" src="img/logo-dark.png" style="background-color: rgb(242, 242, 242); padding:20px;">
+                        {%endif%}
+                    </div>
+                    {%if post.images | length > 0 %}
+                        <div class="images-preview">
+                            {%for image in post.images%}
+                                <img class="small-image" id="img-{{image.id}}" src="data:image/png;base64,{{image.data}}" onclick="viewImage('img-{{image.id}}', 'data:image/png;base64,{{image.data}}')">
+                            {%endfor%}
+                        </div>
+                    {%endif%}
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="footer">
+            <img class="footer-logo" src="img/logo.png">
+            <div class="">
+                <p>Наверх</p>
+                <p>Связаться со специалистом</p>
+            </div>
+            
+            <div class="">
+                <p>+7 (923) 278-33-93</p>
+                <p>saturn-mailbox@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}
+
+{%block scripts%}
+<script>
+    function viewImage(id, img){
+        $('.images-preview').children().css( "border", "none" )
+        $(`#${id}`).css( "border", "1px solid #273068" )
+        $('.post-img').attr("src", img);
+    }
+</script>
+    
+{%endblock%}

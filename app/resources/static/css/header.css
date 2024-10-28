@@ -1,0 +1,100 @@
+.header{
+    padding:0px;
+    padding-left:16px;
+    padding-right:16px;
+    padding-bottom: 20px;
+    margin:0px;
+    width: 100%;
+    z-index: 10;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 60%, rgba(255, 255, 255, 0) 100%);
+
+    position: fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+
+    
+}
+.moving-line{
+    color:whitesmoke;
+    background-color:whitesmoke
+}
+.menu-img{
+    width:45px;
+    height:30px;
+    margin:8px;
+    padding:0px;
+    background-image: url('../img/menu.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+}
+.menu-label{
+    width:fit-content;
+    font-size: 21px;
+    color:whitesmoke;
+    font-weight: 300;
+}
+
+.logo-block{
+    margin-top: -20px;
+}
+
+.moving-left-line{
+    padding: 0px;
+    width: 70%;
+    height:48px;
+    display:flex;
+    align-items: center;
+    justify-content: right;
+    gap:10px;
+}
+
+.moving-right-line{
+    padding: 0px;
+    width: 30%;
+    height:48px;
+    display:flex;
+    align-items: center;
+    margin-left:10px;
+}
+
+.logo{
+    overflow: hidden;
+    width: 52px;
+    height:48px;
+    transition: 1s;
+}
+
+.logo:hover{
+    width: 445px;
+    transition: 1s;
+}
+.logo-img{
+    width: 300px;
+    height: 48px;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../img/logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+@media (max-width: 600px){
+    .logo{
+        overflow: hidden;
+        width: 62px;
+        height:48px;
+    }
+    .logo:hover{
+        overflow: hidden;
+        width: 62px;
+        height:48px;
+    }
+}

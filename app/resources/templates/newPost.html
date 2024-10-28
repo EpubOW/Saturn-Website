@@ -1,0 +1,120 @@
+{%extends 'base.html'%}
+
+{%block styles%}
+    <style>
+        .previewImage{
+            height: 80px;
+            width:fit-content;
+        }
+        .textHolder{
+            height: 400px;
+        }
+        .imagesHolder{
+            height:105px;
+            overflow-x: scroll;
+            background-color: white;
+            
+        }
+        .imagesHolder>*{
+            margin-right: 5px;
+        }
+        body{
+            background-color: rgb(241, 241, 241);
+        }
+    </style>
+{%endblock%}
+
+
+{%block main%}
+    <div class="container" style="margin-top: 60px">
+        <h3 class="mb-3">Новый пост</h3>
+        <div class="row">
+            <div class="col-1">Название статьи:</div>
+            <div class="col-5">
+                <input type="text" class="w-100" name="title" id="title">
+            </div>
+            <div class="col-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5 " >
+                <textarea  class="w-100 textHolder" name="text" id="text"></textarea>
+            </div>
+            <div class="col-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <div class="container border imagesHolder d-flex align-items-center flex-row" id="images">
+            
+                </div>
+            </div>
+            <div class="col-3">
+                <input class="form-control form-control-sm" name='file' id="fileInput" type="file" onchange="previewFile()">
+            </div>
+            <div class="col-3"></div>
+            
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <button class="btn btn-outline-success mt-2" type="submit" onclick="savePost()">Сохранить</button>
+            </div>
+            <div class="col-6">
+            </div>
+            
+        </div>
+    </div>
+{%endblock%}
+
+{%block scripts%}
+    <script>
+        let index = 0
+        const data = new FormData();
+        data.method = 'POST'
+
+        
+        function previewFile() {
+            index++;
+
+            let oldHtml = $('#images').html()
+            $('#images').html(oldHtml + `<img class='previewImage' id="preview${index}" src="">`)
+            var fileInput = document.getElementById('fileInput');
+            var filePreview = document.getElementById(`preview${index}`);
+            filePreview.style.display = 'block';
+            var file = fileInput.files[0];
+            
+            data.append(`image${index}`, file)
+            
+            console.log(file)
+        
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                filePreview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function savePost(){
+            console.log(data.get('image1'))
+            data.append(`title`, $('#title').val())
+            data.append(`text`, $('#text').val())
+            let response = await fetch('/savePost', {
+                method: 'POST',
+                body: data,
+                redirect:"follow"
+            });
+
+            let text = await response.text(); // прочитать тело ответа как текст
+
+            if (text=='ok'){
+                window.location.href = '/main'
+            }
+            else{
+                alert(text)
+            }
+            
+        }
+    </script>
+{%endblock%}

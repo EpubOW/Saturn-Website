@@ -1,0 +1,10 @@
+.main-image-container{
+    position: relative;
+    background-image: url('../img/main-bg-img.jpg');
+    width: 100%;
+    height:700px;
+    background-position: left;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+

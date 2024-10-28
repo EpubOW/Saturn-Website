@@ -1,0 +1,148 @@
+.header{
+    background-color: white;
+    background: white;
+}
+.menu-label{
+    width:fit-content;
+    font-size: 24px;
+    color: #273068;
+    font-weight: 300;
+}
+.menu-img{
+    background-image: url('../img/menu-dark.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+}
+.moving-line{
+    color:#757891;
+    background-color:#757891
+}
+
+.logo-img{
+    background-image: url('../img/logo-dark.png');
+}
+
+
+.main-block{
+    margin-top:60px
+}
+
+.news-data{
+    margin-bottom:36px;
+}
+
+.post-text-col > *{
+    margin-bottom: 12px;
+
+}
+
+.post-link{
+    font-family: 'Montserrat';
+    font-size: 21px;
+    font-weight: 300;
+}
+
+
+.title-header{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #666370;
+}
+
+.back-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color:#757891;
+    font-family: 'Montserrat';
+    font-size: 18px;
+}
+
+
+.post{
+    margin-top: 36px;
+    padding-bottom:24px;
+    border-bottom: 1px solid #757891;
+}
+
+.post *{
+    font-family: 'Montserrat';
+}
+
+.post-title{
+    font-size: 28px;
+    font-weight: 500;
+    color: #373D6A;
+}
+.post-text{
+    font-weight: 300;
+    color:#666370 !important;
+    font-size: 16px;
+
+}
+
+.post-img{
+    width: 400px;
+    max-width: 400px;
+    max-height: 350px;
+
+}
+
+.post-link{
+    color:#273068;
+    text-decoration: underline;
+    font-weight: 500;
+
+}
+
+.images-preview{
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    overflow-x: scroll;
+
+    padding-bottom: 6px;
+
+    max-width: 400px;
+}
+
+.small-image{
+    padding: 2px;
+    height: 60px;
+    width: 80px;
+}
+
+.small-image:nth-child(1){
+    border: 1px solid #273068;
+}
+
+
+/* Designing for scroll-bar */
+.images-preview::-webkit-scrollbar {
+    height: 6px;
+}
+
+/* Track */
+.images-preview::-webkit-scrollbar-track {
+    background: #A3A5B6;
+    border-radius: 5px;
+}
+ 
+/* Handle */
+.images-preview::-webkit-scrollbar-thumb {
+    background: #273068;
+    border-radius: 5px;
+}
+
+

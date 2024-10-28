@@ -1,0 +1,125 @@
+{%extends 'base.html'%}
+
+
+{%block styles%}
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="css/main.css"  rel="stylesheet" />
+    <link href="css/carusel.css"  rel="stylesheet" />
+    <link href="css/footer.css"  rel="stylesheet" />
+{%endblock%}
+
+{%block main%}
+    <div class="main-image-container">
+        <div class="main-text">
+            От разработки корпоративных <br>информационных систем до разработки <br>устройств на базе микропроцессоров
+        </div>
+        <div class="main-backref-button">
+            Связься со специалистом
+        </div>
+        <div class="main-block">
+            <h1 id="directions">
+                Направления разработки
+            </h1>
+            <div class="carusel_holder">
+                <button class="left_carusel_button"  id="left-button"></button>
+                <button class="right_carusel_button" id="right-button"></button>
+                <div class="carusel_block" id="carusel">
+                
+                    <div class="carusel_item">
+                        <div class="carusel_item_bg">
+                        </div>
+                        <div class="carusel_image" style="background-image: url('img/furnace.png');"></div>
+                        <div class="carusel_text">
+                            Разработка производственной аппаратуры
+                        </div>
+                    </div>
+    
+                    <div class="carusel_item">
+                        <div class="carusel_item_bg">
+                        </div>
+                        <div class="carusel_image" style="background-image: url('img/laptop.png');"></div>
+                        <div class="carusel_text">
+                            Мобильные системы произвоственного контроля
+                        </div>
+                    </div>
+    
+                    <div class="carusel_item">
+                        <div class="carusel_item_bg">
+                        </div>
+                        <div class="carusel_image" style="background-image: url('img/furnace.png');"></div>
+                        <div class="carusel_text">
+                            Разработка производственной аппаратуры
+                        </div>
+                    </div>
+    
+                    <div class="carusel_item">
+                        <div class="carusel_item_bg">
+                        </div>
+                        <div class="carusel_image" style="background-image: url('img/laptop.png');"></div>
+                        <div class="carusel_text">
+                            Мобильные системы произвоственного контроля
+                        </div>
+                    </div>
+    
+                    <div class="carusel_item">
+                        <div class="carusel_item_bg">
+                        </div>
+                        <div class="carusel_image" style="background-image: url('img/furnace.png');"></div>
+                        <div class="carusel_text">
+                            Разработка производственной аппаратуры
+                        </div>
+                    </div>
+    
+                    <div class="carusel_item">
+                        <div class="carusel_item_bg">
+                        </div>
+                        <div class="carusel_image" style="background-image: url('img/laptop.png');"></div>
+                        <div class="carusel_text">
+                            Мобильные системы произвоственного контроля
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="commerce-offer" class="commerce-offer">
+                <img src="img/code.png" class="commerce-img big-screen">
+                <div class="container" style="width: 55%;">
+                    <h1 style="margin-top: 60px;">Работа с предприятиями любого направления и масштаба</h1>
+                    <p>
+                        Подберем удобный для вас формат сотрудничества на базе ООО, ИП, Хоз Договора, гранта или иных форм
+                    </p>
+                </div>
+            </div>
+
+            <div class="back-call-block">
+                <h1>Свяжитесь со специалистом</h1>
+                <p>
+                    Оставьте заявку на звонок или свяжитесь с нами сами
+                </p>
+                <div class="backref-button">
+                    Связься со специалистом
+                </div>
+            </div>
+
+            <div class="footer">
+                <img class="footer-logo" src="img/logo.png" alt="">
+                
+                <div class="">
+                    <p>На главную</p>
+                    <p>Связаться со специалистом</p>
+                </div>
+                
+                <div class="">
+                    <p><a href='tel:89232783393' style='color:#666370'>+7 (923) 278-33-93</a></p>
+                    <p><a href='mailto:It.Saturn@s-pl.ru' style='color:#666370'>It.Saturn@s-pl.ru</a></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+{%endblock%}
+
+{%block scripts%}
+    <script src="js/carusel.js"></script>
+{%endblock%}

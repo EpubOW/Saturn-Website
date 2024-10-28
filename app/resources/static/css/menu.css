@@ -1,0 +1,149 @@
+
+.menu-bg{
+    display: none;
+    z-index: 10;
+    
+    position: fixed;
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #373D6A;
+
+    box-shadow: inset 0px 80px 60px 0px rgba(0,0,0,0.25);
+
+
+}
+.menu{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.menu-top{
+    width: 100%;
+    padding: 40px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:20px;
+}
+
+.menu-top *{
+    margin: 0px;
+}
+
+.menu-back-button{
+    width: 35px;
+    height: 35px;
+}
+
+
+.menu div, .menu p, .menu a{
+    color: white;
+}
+
+.menu p{
+    font-family: 'Montserrat';
+    font-size: 21px;
+}
+
+.menu-button{
+    margin-top: 60px;
+    background-color: white;
+    color: #273068 !important;
+    padding:  15px 30px 15px 30px;
+    
+    font-size: 21px;
+}
+
+.news-topic{
+    font-size: 28px !important;
+}
+
+.news-header{
+    font-size: 21px;
+}
+
+.news-menu{
+    max-width: 500px;
+
+    padding-left: 40px;
+    border-left: 2px solid white;
+    height: fit-content;
+}
+.news-img{
+    width: 100%;
+    margin-bottom: 40px;
+    max-height: 300px;
+}
+.news-text{
+    display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+           line-clamp: 3; 
+   -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 300;
+    color:#A3A5B6 !important;
+    
+    
+
+    margin-bottom: 30px;
+}
+
+.news-text *{
+    font-size: 14px !important;
+    font-weight: 200 !important;
+    
+}
+
+.menu-news-link{
+    
+    font-size: 18px;
+    font-weight: 300;
+    text-decoration: underline !important;
+}
+
+.actions-menu a{
+    text-decoration: none;
+}
+
+.actions-menu a:hover{
+    font-weight: 600;
+}
+
+.back-call-block{
+    margin-bottom: 80px;
+}
+
+
+@media (max-width: 600px){
+    .news-menu{
+        border: none;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+    .actions-menu{
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+    .menu-button{
+        margin-top: 20px;
+    }
+    .news-header{
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    .news-text{
+        font-size: 14px;
+    }
+    .news-img{
+        margin-bottom: 12px;
+    }
+}

@@ -1,0 +1,77 @@
+{%extends 'base.html'%}
+
+
+{%block styles%}
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="css/news.css"  rel="stylesheet" />
+    <link href="css/carusel.css"  rel="stylesheet" />
+    <link href="css/footer.css"  rel="stylesheet" />
+{%endblock%}
+
+{%block main%}
+
+    <div class="main-block">
+        <div class="container news-header">
+            <h1>Новости</h1>
+            <form class="search" role="search" action="/search" method="POST" enctype="multipart/form-data">
+                <button class="search-button" type="submit"></button>
+                <input class="search-text" name="targets" type="search" placeholder="Поиск...">
+            </form>
+        </div>
+        <div class="container news-data">
+            <div class="col">
+                {%if posts | length > 0 %}
+                    {%for post in posts%}
+                        <div class="row post">
+                            <div class="col" style="max-width: fit-content;">
+                                {%if post.images | length > 0 %}
+                                    <img class="post-img" src="data:image/png;base64,{{post.images[0].data}}">
+                                {%else%}
+                                    <img class="post-img" src="img/logo-dark.png" style="background-color: rgb(242, 242, 242);padding:20px;">
+                                {%endif%}
+                            </div>
+                            <div class="col post-text-col">
+                                <div class="row post-title">
+                                    {{post.title}}
+                                </div>
+                                <div class="row post-text">
+                                    {{post.info | safe}}
+                                </div>
+                                <a class="row post-link" href="/post?id={{post.id}}">
+                                    Подробнее
+                                </a>
+                            </div>
+                            
+                        </div>
+                    {%endfor%}
+                {%else%}
+                    <div class="row">
+                        <p>
+                            К сожалению, тут пока ничего нет
+                        </p>
+                    </div>
+                {%endif%}
+            </div>
+        </div>
+        
+        <div class="footer">
+            <img class="footer-logo" src="img/logo.png">
+            <div class="">
+                <p>Наверх</p>
+                <p>Связаться со специалистом</p>
+            </div>
+            
+            <div class="">
+                <p>+7 (923) 278-33-93</p>
+                <p>saturn-mailbox@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}
+
+{%block scripts%}
+    <script>
+
+    </script>
+{%endblock%}
