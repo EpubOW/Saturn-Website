@@ -26,9 +26,9 @@
 <body style="overflow-x: hidden">
     <div class="header">
         <div class="row justify-content-start">
-            <div class="row justify-content-start align-items-center menu-nav-button">
-                <div class="menu-img"></div>
-                <div class="menu-label">Навигация</div>
+            <div class="row justify-content-start align-items-center">
+                <div class="menu-img menu-nav-button"></div>
+                <div class="menu-label menu-nav-button">Навигация</div>
             </div>
         </div>
 
@@ -49,26 +49,21 @@
     <div class="menu-bg">
         <div class="menu">
             <div class="menu-top">
-                <img class="menu-back-button" src="img/cross.png" alt="">
-                <p>Назад</p>
+                <img class="menu-back-button-img menu-back-button" src="img/cross.png" alt="">
+                <p class="menu-back-button">Назад</p>
             </div>
             <div class="actions-menu">
                 <p><a href="/main">Главная</a></p>
                 <p><a href="/news">Новости</a></p>
                 <p><a href="/main#directions">Направления разработки</a></p>
                 <p><a href="/main#commerce-offer">Формы контрактов</a></p>
-                <div class="menu-button">
-                    Связаться со специалистом
-                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSek4cEuuZLqioq4tz9htjsKPiNpPnFB_-9iOZopxqxu81NtfA/viewform?embedded=true">
+                    <div class="menu-button">
+                        <p style="color: #273068;">Связаться со специалистом</p>
+                    </div>
+                </a>
             </div>
-            <div class="news-menu">
-                <p class="news-topic">Последние новости</p>
-                <div class="news-header">{{lastPost.title}}</div>
-                <div class="news-text">
-                    {{lastPost.info | safe}}
-                </div>
-                <img class="news-img" src="data:image/png;base64,{{lastPost.images[0].data}}">
-                <a class="menu-news-link" href="/post?id={{lastPost.id}}">Подробнее</a>
+            <div id="news-menu" class="news-menu">
             </div>
             
         </div>
@@ -83,15 +78,38 @@
       
 </body>
 <script>
+    let lastPost = null;
+
     $('.menu-nav-button').click(function(){
+        console.log('menu-nav-button')
         $('.menu-bg').css("display","block");
     })
     $('.menu-back-button').click(function(){
+        console.log('menu-back-button')
         $('.menu-bg').css("display","none");
     })
     $('.actions-menu *').click(function(){
+        console.log('actions-menu')
         $('.menu-bg').css("display","none");
     })
+
+    function renderLastNews(){
+        $('#news-menu').append(`
+            <p class="news-topic">Последние новости</p>
+                <div class="news-header">{{lastPost.title}}</div>
+                <div class="news-text">
+                    {{lastPost.info | safe}}
+                </div>
+                <img class="news-img" src="data:image/png;base64,lastPost.images[0].data">
+                <a class="menu-news-link" href="/post?id={{lastPost.id}}">Подробнее</a>
+        `);
+    }
+
+    {%if lastPost%}
+        lastPost = {{lastPost}}
+        console.log(lastPost)
+        renderLastNews()
+    {%endif%}
     
 </script>
 {%block scripts%}

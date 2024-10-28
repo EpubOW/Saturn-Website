@@ -14,6 +14,7 @@ def getMain():
 @login_required
 def newPostPage():
     return render_template('newPost.html', lastPost=Post.getLast()) 
+    # return render_template('newPost.html')
 
 # @app.route('/post', methods=['GET'])
 # def getPsot():

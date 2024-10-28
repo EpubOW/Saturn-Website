@@ -37,6 +37,7 @@
     font-size: 21px;
     color:whitesmoke;
     font-weight: 300;
+    padding: 12px;
 }
 
 .logo-block{
@@ -44,6 +45,7 @@
 }
 
 .moving-left-line{
+    /* z-index: -1; */
     padding: 0px;
     width: 70%;
     height:48px;
@@ -54,6 +56,7 @@
 }
 
 .moving-right-line{
+    /* z-index: -1; */
     padding: 0px;
     width: 30%;
     height:48px;

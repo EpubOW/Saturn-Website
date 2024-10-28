@@ -12,3 +12,10 @@ class Post(db.Model, BaseData):
         self.info = info
         db.Model.__init__(self)
         BaseData.__init__(self, self.id)
+
+    # @classmethod
+    # def getLastPost(cls):
+    #     last_post = cls.getLast()
+    #     if last_post is None: last_post = {}
+    #     print(last_post)
+    #     return last_post
