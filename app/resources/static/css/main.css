@@ -71,6 +71,11 @@ a{
     text-decoration: none;
 }
 
+p{
+    margin: 0;
+    padding: 5px;
+}
+
 .commerce-offer{
     margin-top: 80px;
     margin-left: -50px;
@@ -115,9 +120,9 @@ a{
 
 @media (max-width: 600px){
     .back-call-block{
-        padding-left:20px;
-        
+        padding-left:0;
     }
+
     .main-text{
         top:50%;
         font-size: 28px;

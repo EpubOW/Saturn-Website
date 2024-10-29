@@ -7,6 +7,7 @@ from os import path
 
 @app.route('/main', methods=['GET'])
 def getMain():
+    print(Post.getLast())
     return render_template('main.html', lastPost=Post.getLast()) 
 
 

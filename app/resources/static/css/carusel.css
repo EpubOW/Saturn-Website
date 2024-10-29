@@ -15,6 +15,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow-x: scroll;
+    touch-action: none; 
     transition: 1s;
 }
 
@@ -23,9 +24,14 @@
 }
 
 .carusel_item{
-    
-    min-width: 310px;
-    margin-right: 32px;
+    min-width: calc((100vw - 264px)/5);
+    margin-right: 16px;
+    margin-left: 16px;
+}
+@media (max-width: 600px){
+    .carusel_item{
+        min-width: fit-content;
+    }
 }
 .carusel_item:nth-child(-1){
     margin-right: 0;

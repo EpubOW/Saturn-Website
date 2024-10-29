@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Saturn</title>
     <link href="css/bootstrap.min.css"  rel="stylesheet" />
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -50,7 +50,7 @@
         <div class="menu">
             <div class="menu-top">
                 <img class="menu-back-button-img menu-back-button" src="img/cross.png" alt="">
-                <p class="menu-back-button">Назад</p>
+                <p class="menu-back-button" style="margin-left: 10px;">Назад</p>
             </div>
             <div class="actions-menu">
                 <p><a href="/main">Главная</a></p>
@@ -93,23 +93,21 @@
         $('.menu-bg').css("display","none");
     })
 
-    function renderLastNews(){
+
+    {%if lastPost%}
         $('#news-menu').append(`
             <p class="news-topic">Последние новости</p>
                 <div class="news-header">{{lastPost.title}}</div>
                 <div class="news-text">
                     {{lastPost.info | safe}}
                 </div>
-                <img class="news-img" src="data:image/png;base64,lastPost.images[0].data">
+                <img class="news-img" src="data:image/png;base64,{{lastPost.images[0].data}}">
                 <a class="menu-news-link" href="/post?id={{lastPost.id}}">Подробнее</a>
         `);
-    }
-
-    {%if lastPost%}
-        lastPost = {{lastPost}}
-        console.log(lastPost)
-        renderLastNews()
     {%endif%}
+
+
+    
     
 </script>
 {%block scripts%}

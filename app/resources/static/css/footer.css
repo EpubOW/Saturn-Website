@@ -30,3 +30,11 @@
     max-width: 250px;
     height:fit-content;
 }
+
+.footer-nav{
+    color: #666370;
+}
+
+a{
+    text-decoration: none;
+}

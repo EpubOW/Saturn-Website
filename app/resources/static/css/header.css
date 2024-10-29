@@ -23,8 +23,8 @@
 .menu-img{
     width:45px;
     height:30px;
-    margin:8px;
-    padding:0px;
+    margin-left:12px;
+    /* padding:12px; */
     background-image: url('../img/menu.png');
     background-size: cover;
     background-position: center;
