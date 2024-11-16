@@ -5,7 +5,7 @@ from model.data.post import Post
 from flask import request, url_for, redirect, render_template
 from os import path
 
-@app.route('/main', methods=['GET'])
+@app.route('/', methods=['GET'])
 def getMain():
     print(Post.getLast())
     return render_template('main.html', lastPost=Post.getLast()) 
