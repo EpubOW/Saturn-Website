@@ -97,7 +97,7 @@
     {%if lastPost%}
         $('#news-menu').append(`
             <p class="news-topic">Последние новости</p>
-                <div class="news-header">{{lastPost.title}}</div>
+                <a class="news-header" href="/post?id={{lastPost.id}}">{{lastPost.title}}</a>
                 <div class="news-text">
                     {{lastPost.info | safe}}
                 </div>
