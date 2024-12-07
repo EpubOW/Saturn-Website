@@ -15,7 +15,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow-x: scroll;
-    touch-action: none; 
+    /* touch-action: none;  */
     transition: 1s;
 }
 
