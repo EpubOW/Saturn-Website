@@ -27,8 +27,8 @@
                         {{post.info | safe}}
                     </div>
                 </div>
-                <div class="col" style="max-width: min-content;">
-                    <div style="display: flex; align-items:center;justify-content:center; width:400px;height:280px;">
+                <div class="col" style="width: 100%; ">
+                    <div style="display: flex; align-items:center;justify-content:center; /* width:400px */ ;height:280px;">
                         {%if post.images | length > 0 %}
                             <img class="post-img" src="data:image/png;base64,{{post.images[0].data}}">
                         {%else%}

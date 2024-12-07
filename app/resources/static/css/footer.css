@@ -16,7 +16,14 @@
 
     background-color: #D1D2DB;
     margin-top:inherit;
+
+    padding-left: 100px !important;
     
+}
+@media (max-width: 600px){
+    .footer{
+        padding-left: 50px !important;
+    }
 }
 
 .footer p{
